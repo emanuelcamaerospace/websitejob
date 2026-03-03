@@ -205,7 +205,8 @@ nav a:hover { color: #ffffff; }
 
 </style>
 </head>
-
+<!-- Add Font Awesome CDN at the top of your <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <body>
 
 <nav>
@@ -216,6 +217,7 @@ nav a:hover { color: #ffffff; }
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#thesis">Thesis</a>
+        <a href="#cv">CV</a> <!-- New link -->
     </div>
 </nav>
 
@@ -390,24 +392,39 @@ nav a:hover { color: #ffffff; }
     </div>
 </section>
 
+<section id="cv" class="section">
+    <h2>Curriculum Vitae</h2>
+
+    <div class="card">
+        <p>
+            Access my full CV to see detailed academic records, projects, internships, and professional experience.
+        </p>
+        <a href="cv.html" class="btn">VIEW / DOWNLOAD CV</a>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
 <section class="contact-section">
-    <h2>Contact</h2>
+    <h2>Contact & Professional Links</h2>
 
     <div class="contact-grid">
         <div class="contact-item">
-            <strong>Email</strong><br>
+            <i class="fa-solid fa-envelope" style="margin-right:8px;"></i>
+            <strong>Email:</strong><br>
             <a href="mailto:emanuel1902191@gmail.com">emanuel1902191@gmail.com</a>
         </div>
 
         <div class="contact-item">
-            <strong>LinkedIn</strong><br>
+            <i class="fa-brands fa-linkedin" style="margin-right:8px;"></i>
+            <strong>LinkedIn:</strong><br>
             <a href="https://www.linkedin.com/in/emanuel-camacho-05ab8a245" target="_blank">
                 linkedin.com/in/emanuel-camacho
             </a>
         </div>
 
         <div class="contact-item">
-            <strong>GitHub</strong><br>
+            <i class="fa-brands fa-github" style="margin-right:8px;"></i>
+            <strong>GitHub:</strong><br>
             <a href="https://github.com/emanuelcamaerospace" target="_blank">
                 github.com/emanuelcamaerospace
             </a>
@@ -415,9 +432,11 @@ nav a:hover { color: #ffffff; }
     </div>
 
     <p style="margin-top:60px; opacity:0.5;">
-        © 2026 Emanuel Camacho
+        © 2026 Emanuel Camacho | Aerospace Engineering
     </p>
 </section>
+
+
 
 <script>
 const observer = new IntersectionObserver(entries => {
