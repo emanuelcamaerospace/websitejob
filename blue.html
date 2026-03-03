@@ -3,166 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLUE Turbojet | Emanuel Camacho</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:'Inter',sans-serif;
-background:#04060b;
-color:#e5e7eb;
-line-height:1.7;
-overflow-x:hidden;
-}
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:80px 80px;
-pointer-events:none;
-}
-.blueprint{
-position:fixed;
-right:-200px;
-top:0;
-width:900px;
-opacity:0.04;
-}
-nav{
-position:fixed;
-width:100%;
-background:rgba(4,6,11,0.95);
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-nav a{color:#9ca3af;text-decoration:none;margin-left:30px;}
-nav a:hover{color:white;}
-
-.section{padding:140px 8% 120px 8%;}
-h1{font-size:48px;margin-bottom:40px;}
-.card{
-background:#0b0f17;
-padding:40px;
-border:1px solid rgba(255,255,255,0.08);
-margin-bottom:50px;
-}
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-.gallery img{
-width:100%;
-border:1px solid rgba(255,255,255,0.1);
-}
-
-.contact-section{
-background:#0b0f17;
-padding:150px 8%;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.1);
-}
-.contact-grid{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:80px;
-margin-top:80px;
-}
-.contact-item{font-size:22px;}
-.contact-item strong{display:block;font-size:26px;margin-bottom:10px;}
-.contact-item a{color:white;text-decoration:none;}
-.contact-item a:hover{text-decoration:underline;}
-</style>
+<title>BLUE – Emanuel Camacho</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<img src="images/aircraft_blueprint.png" class="blueprint">
-
-<nav>
-<div><strong>BLUE Turbojet</strong></div>
-<div>
-<a href="index.html">Home</a>
-</div>
-</nav>
+<a href="index.html" class="btn" style="margin:30px;">← Back to Portfolio</a>
 
 <section class="section">
-<h1>Aerotéc – BLUE Micro Turbojet Development</h1>
-
-<div class="card">
-As a member of the design team of BLUE (student propulsion project),
-I am responsible for the radial compressor subsystem — specifically
-the radial impeller and diffuser geometry.
-
-Work involved dimensionalizing turbomachinery components using MATLAB,
-modeling thermodynamic and aerodynamic behaviour, and defining
-design parameters including pressure ratios, blade angles,
-mass flow rates and efficiency constraints.
-
-CAD design was carried out integrating:
-• Aerodynamic performance requirements  
-• Systems engineering constraints  
-• Manufacturing feasibility  
-
-This work directly contributes to the development of a small-scale
-turbojet engine for experimental propulsion applications.
-</div>
-
-<h2 style="margin-bottom:40px;">Design Gallery</h2>
-
-<div class="gallery">
-<img src="images/blue1.jpg">
-<img src="images/blue2.jpg">
-<img src="images/blue3.jpg">
-</div>
-
+    <h2>BLUE – Micro Turbojet Project</h2>
+    <div class="card">
+        <p>
+            As part of Aerotéc, I am currently designing radial impeller and diffuser components for a micro turbojet engine. My responsibilities include:
+        </p>
+        <ul>
+            <li>MATLAB modeling of turbomachinery performance</li>
+            <li>CAD design of compressor and diffuser components</li>
+            <li>Integrating aerodynamics principles with manufacturing constraints</li>
+        </ul>
+        <p>Ongoing project, contributing to practical experience in propulsion and UAV systems.</p>
+    </div>
 </section>
-
-<section class="contact-section">
-<h2>Contact & Networks</h2>
-
-<div class="contact-grid">
-<div class="contact-item">
-<strong>Email</strong>
-emanuel1902191@gmail.com
-</div>
-
-<div class="contact-item">
-<strong>LinkedIn</strong>
-<a href="https://linkedin.com/in/emanuel-camacho-05ab8a245" target="_blank">
-linkedin.com/in/emanuel-camacho
-</a>
-</div>
-
-<div class="contact-item">
-<strong>GitHub</strong>
-<a href="https://github.com/Enclavelisbased" target="_blank">
-github.com/Enclavelisbased
-</a>
-</div>
-
-<div class="contact-item">
-<strong>Phone</strong>
-+351 960 366 633
-</div>
-</div>
-
-<p style="margin-top:80px;opacity:0.5;">© 2026 Emanuel Camacho</p>
-</section>
-
-<script>
-window.addEventListener("scroll",function(){
-document.querySelector(".blueprint").style.transform =
-"translateY("+window.scrollY*0.2+"px)";
-});
-</script>
 
 </body>
 </html>

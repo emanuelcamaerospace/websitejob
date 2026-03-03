@@ -4,209 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emanuel Camacho | Aerospace Engineering</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-/* ================= GLOBAL ================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: #05070d;
-    color: #e5e7eb;
-    line-height: 1.8;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* Subtle blueprint grid */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* ================= NAV ================= */
-
-nav {
-    position: fixed;
-    width: 100%;
-    background: rgba(5,7,13,0.95);
-    backdrop-filter: blur(12px);
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 8%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    margin-left: 30px;
-    font-weight: 500;
-    transition: 0.3s ease;
-}
-
-nav a:hover { color: #ffffff; }
-
-/* ================= HERO ================= */
-
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 8%;
-    position: relative;
-}
-
-.hero-content {
-    display: flex;
-    align-items: center;
-    gap: 70px;
-    z-index: 1;
-}
-
-.hero img {
-    width: 260px;
-    border-radius: 50%;
-    border: 3px solid #1f2937;
-}
-
-.hero-text h1 { font-size: 52px; font-weight: 800; letter-spacing: 1px; }
-.hero-text h2 { color: #9ca3af; font-weight: 400; margin: 15px 0 25px 0; }
-.hero-text p { font-size: 18px; max-width: 650px; color: #d1d5db; }
-
-/* Hero glow */
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(255,255,255,0.04), transparent 70%);
-    top: 50%;
-    right: -250px;
-    transform: translateY(-50%);
-    z-index: 0;
-}
-
-/* ================= BUTTON ================= */
-
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 28px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 2px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-}
-
-.btn:hover { background: #ffffff; color: #05070d; }
-
-/* ================= SECTIONS ================= */
-
-.section { padding: 120px 8%; position: relative; z-index: 1; }
-
-.section h2 { font-size: 36px; font-weight: 800; margin-bottom: 60px; letter-spacing: 1px; }
-
-/* ================= CARDS ================= */
-
-.card {
-    background: #0c111b;
-    padding: 40px;
-    margin-bottom: 35px;
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: 0.3s ease;
-}
-
-.card:hover { border-color: rgba(255,255,255,0.2); }
-.card p { font-size: 18px; margin-bottom: 20px; }
-
-/* ================= TIMELINE ================= */
-
-.timeline { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 40px; }
-
-.timeline-item { margin-bottom: 60px; position: relative; }
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -49px;
-    top: 5px;
-    width: 16px;
-    height: 16px;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-.timeline-date { color: #9ca3af; margin-bottom: 10px; font-weight: 600; letter-spacing: 1px; }
-
-/* ================= SKILLS ================= */
-
-.skill-category { margin-bottom: 40px; }
-.skill-category h3 { margin-bottom: 20px; font-weight: 700; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 15px; }
-.skill-tag { padding: 12px 20px; border: 1px solid rgba(255,255,255,0.2); font-size: 16px; letter-spacing: 1px; }
-
-/* ================= COURSES ================= */
-
-.course-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 30px; }
-.course-card { background: #0c111b; padding: 30px; border: 1px solid rgba(255,255,255,0.06); font-size: 18px; }
-
-/* ================= CONTACT ================= */
-
-.contact-section {
-    background: #0c111b;
-    padding: 140px 8%;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; margin-top: 50px; }
-
-.contact-item {
-    min-width: 300px;
-    font-size: 20px;
-}
-
-.contact-item strong { display:block; font-size:28px; margin-bottom:10px; }
-.contact-item a { color: #ffffff; text-decoration: none; }
-.contact-item a:hover { text-decoration: underline; }
-
-/* ================= FADE ANIMATION ================= */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-}
-
-.fade-in.visible { opacity:1; transform: translateY(0); }
-
-@media(max-width: 900px) { .hero-content { flex-direction: column; text-align: center; } }
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<!-- Add Font Awesome CDN at the top of your <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <body>
 
 <nav>
@@ -217,7 +17,8 @@ nav a:hover { color: #ffffff; }
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#thesis">Thesis</a>
-        <a href="#cv">CV</a> <!-- New link -->
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
@@ -225,32 +26,31 @@ nav a:hover { color: #ffffff; }
     <div class="hero-content">
         <img src="images/profile.png" alt="Emanuel Camacho">
         <div class="hero-text">
-            <h1>Aerospace Engineering</h1>
-            <h2>MSc Candidate | Propulsion & Aircraft Systems</h2>
+            <h1>Emanuel Camacho</h1>
+            <h2>MSc Aerospace Engineering | Propulsion & Aircraft Systems</h2>
             <p>
                 Focused on propulsion engineering, turbomachinery, and aerospace systems development.
-                Interested in aerospace and defense applications driven by performance,
-                precision, and technological sovereignty.
+                Interested in aerospace and defense applications driven by performance, precision, and technological sovereignty.
             </p>
-            <a href="#experience" class="btn">VIEW EXPERIENCE</a>
+            <a href="#experience" class="btn">Explore My Work</a>
         </div>
     </div>
 </section>
 
 <section id="about" class="section">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <div class="card">
         <p>
-            It has always been a dream of mine to fly. Initially, this led to an interest in becoming an airline pilot, a passion I maintain through flight simulation and deep engagement with the aviation industry.
+            It has always been a dream of mine to fly. Initially, I aimed to become an airline pilot, a passion I still maintain through flight simulation and immersion in the aviation industry.
         </p>
         <p>
-            Over time, my curiosity matured into the goal of entering the most competitive engineering track in Portugal, with a focus on Aerospace Engineering at Instituto Superior Técnico (IST). After achieving an average grade of 19.13/20, I moved from a rural village to Lisbon to start my degree—a challenge I embraced and overcame.
+            This curiosity led me to pursue Aerospace Engineering at Instituto Superior Técnico, Portugal’s most competitive engineering track. Graduating top of my high school class (19.13/20), I moved to Lisbon to pursue my degree.
         </p>
         <p>
-            During my studies, I undertook an internship with the Portuguese Civil Aviation Authority (ANAC), where I developed software predicting UAS trajectories after critical failures. The project contributed to regulatory processes and gave me my first experience of making meaningful contributions in aerospace.
+            During my internship at ANAC (Autoridade Nacional de Aviação Civil) in 2024, I developed software capable of predicting the flight path of UAS after critical failures, supporting certification procedures—a contribution recognized by the project coordinator.
         </p>
         <p>
-            I also completed an Erasmus semester at the Technical University of Munich, focusing on aircraft propulsion and systems engineering. I joined BLUE, a student project dedicated to designing micro turbojets for UAVs, further enhancing my hands-on experience in aerodynamics and propulsion.
+            I also joined BLUE, a student project focused on micro turbojet design, to gain practical experience in propulsion and aircraft systems, complementing my MSc studies. An Erasmus semester at the Technical University of Munich further deepened my expertise in propulsion and aircraft systems.
         </p>
     </div>
 </section>
@@ -265,9 +65,9 @@ nav a:hover { color: #ffffff; }
                 <h3>Aerotéc – BLUE</h3>
                 <p>
                     Design of radial impeller and diffuser components for a micro turbojet engine.
-                    Turbomachinery modelling in MATLAB and CAD-based compressor geometry development.
+                    Turbomachinery modeling in MATLAB and CAD-based compressor geometry development.
                 </p>
-                <a href="blue.html" class="btn">PROJECT DETAILS</a>
+                <a href="blue.html" class="btn">Project Details</a>
             </div>
         </div>
 
@@ -279,7 +79,7 @@ nav a:hover { color: #ffffff; }
                     Development of aerodynamic models predicting UAS trajectories after critical failure.
                     Implementation of HTML-based simulation tools supporting certification procedures.
                 </p>
-                <a href="anac.html" class="btn">PROJECT DETAILS</a>
+                <a href="anac.html" class="btn">Project Details</a>
             </div>
         </div>
 
@@ -294,7 +94,6 @@ nav a:hover { color: #ffffff; }
             <div class="timeline-date">2024 — 2026 (ONGOING)</div>
             <div class="card">
                 <h3>MSc Aerospace Engineering – IST</h3>
-                <p>Specialization in Aircraft Aerodynamics & Propulsion</p>
             </div>
         </div>
 
@@ -302,7 +101,6 @@ nav a:hover { color: #ffffff; }
             <div class="timeline-date">2025</div>
             <div class="card">
                 <h3>Technical University of Munich – Erasmus</h3>
-                <p>Propulsion & Aircraft Systems</p>
             </div>
         </div>
 
@@ -310,7 +108,14 @@ nav a:hover { color: #ffffff; }
             <div class="timeline-date">2021 — 2024</div>
             <div class="card">
                 <h3>BSc Aerospace Engineering – IST</h3>
-                <p>Completed with high distinction (Grade 19.13/20)</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2018 — 2021</div>
+            <div class="card">
+                <h3>High School – Sciences & Technologies</h3>
+                <p>Graduated top of class – 19.13/20</p>
             </div>
         </div>
 
@@ -332,34 +137,34 @@ nav a:hover { color: #ffffff; }
     </div>
 
     <div class="skill-category">
-        <h3>Programming</h3>
+        <h3>Programming & Web Dev</h3>
         <div class="skill-tags">
             <div class="skill-tag">C</div>
             <div class="skill-tag">Python</div>
             <div class="skill-tag">R</div>
             <div class="skill-tag">HTML</div>
+            <div class="skill-tag">Front-End</div>
+            <div class="skill-tag">Back-End</div>
         </div>
     </div>
-</section>
 
-<section id="modules" class="section">
-    <h2>Relevant Coursework</h2>
-    <div class="course-grid">
-        <div class="course-card">
-            <h3>Aircraft Aerodynamics</h3>
-            <p>Advanced aerodynamic theory applied to aircraft performance and stability.</p>
+    <div class="skill-category">
+        <h3>Project Management</h3>
+        <div class="skill-tags">
+            <div class="skill-tag">Project Planning</div>
+            <div class="skill-tag">Project Management</div>
+            <div class="skill-tag">LaTeX</div>
+            <div class="skill-tag">Excel</div>
         </div>
-        <div class="course-card">
-            <h3>Propulsion Systems</h3>
-            <p>Gas turbines, turbojet thermodynamics, compressor and turbine design principles.</p>
-        </div>
-        <div class="course-card">
-            <h3>Flight Mechanics</h3>
-            <p>Aircraft dynamics, stability analysis, and trajectory modeling.</p>
-        </div>
-        <div class="course-card">
-            <h3>Computational Methods</h3>
-            <p>Numerical simulations, modelling techniques, and engineering optimization.</p>
+    </div>
+
+    <div class="skill-category">
+        <h3>Languages</h3>
+        <div class="skill-tags">
+            <div class="skill-tag">Portuguese (Native)</div>
+            <div class="skill-tag">English (C2)</div>
+            <div class="skill-tag">Spanish (Professional)</div>
+            <div class="skill-tag">German (A1)</div>
         </div>
     </div>
 </section>
@@ -367,90 +172,45 @@ nav a:hover { color: #ffffff; }
 <section id="thesis" class="section">
     <h2>MSc Thesis</h2>
     <div class="card">
-        <p>
-            Ongoing research in advanced propulsion and aircraft systems engineering.
-            Focus on turbomachinery performance, aerodynamic efficiency, and system integration.
-        </p>
-        <a href="thesis.html" class="btn">THESIS DETAILS</a>
+        <p>Ongoing research in advanced propulsion and aircraft systems engineering. Technical documentation will be published as the project develops.</p>
+        <a href="thesis.html" class="btn">Thesis Details</a>
     </div>
 </section>
 
-<section id="extracurriculars" class="section">
+<section id="extracurricular" class="section">
     <h2>Extracurriculars</h2>
-
     <div class="card">
         <h3>NESD – Núcleo de Estudantes Sociais Democratas</h3>
         <p>
-            Actively contributed to political engagement using digital tools and social media, generating interest in relevant topics while maintaining consistent messaging.
-        </p>
-        <p>
-            Conducted interviews with deputies from the Assembly of the Portuguese Republic, strengthening my communication, research, and public engagement skills.
-        </p>
-        <p>
-            This experience honed my leadership, organization, and teamwork abilities, complementing my technical expertise in aerospace engineering.
+            Engaged in social media and digital outreach to promote political awareness. Conducted interviews with deputies of the Portuguese assembly, developing strong research and communication skills.
         </p>
     </div>
 </section>
 
 <section id="cv" class="section">
     <h2>Curriculum Vitae</h2>
-
-    <div class="card">
-        <p>
-            Access my full CV to see detailed academic records, projects, internships, and professional experience.
-        </p>
-        <a href="cv.html" class="btn">VIEW / DOWNLOAD CV</a>
-    </div>
+    <a href="cv.html" class="btn">View Full CV</a>
 </section>
 
-<!-- CONTACT SECTION -->
-<section class="contact-section">
-    <h2>Contact & Professional Links</h2>
-
+<section id="contact" class="contact-section">
+    <h2>Contact</h2>
     <div class="contact-grid">
         <div class="contact-item">
-            <i class="fa-solid fa-envelope" style="margin-right:8px;"></i>
-            <strong>Email:</strong><br>
-            <a href="mailto:emanuel1902191@gmail.com">emanuel1902191@gmail.com</a>
+            📧 <a href="mailto:emanuel1902191@gmail.com">emanuel1902191@gmail.com</a>
         </div>
-
         <div class="contact-item">
-            <i class="fa-brands fa-linkedin" style="margin-right:8px;"></i>
-            <strong>LinkedIn:</strong><br>
-            <a href="https://www.linkedin.com/in/emanuel-camacho-05ab8a245" target="_blank">
-                linkedin.com/in/emanuel-camacho
-            </a>
+            💼 <a href="https://www.linkedin.com/in/emanuel-camacho-05ab8a245" target="_blank">linkedin.com/in/emanuel-camacho</a>
         </div>
-
         <div class="contact-item">
-            <i class="fa-brands fa-github" style="margin-right:8px;"></i>
-            <strong>GitHub:</strong><br>
-            <a href="https://github.com/emanuelcamaerospace" target="_blank">
-                github.com/emanuelcamaerospace
-            </a>
+            🐙 <a href="https://github.com/emanuelcamaerospace" target="_blank">github.com/emanuelcamaerospace</a>
+        </div>
+        <div class="contact-item">
+            📞 +351 960 366 633
         </div>
     </div>
-
-    <p style="margin-top:60px; opacity:0.5;">
-        © 2026 Emanuel Camacho | Aerospace Engineering
-    </p>
+    <p style="margin-top:60px; opacity:0.5;">© 2026 Emanuel Camacho</p>
 </section>
 
-
-
-<script>
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-        }
-    });
-});
-document.querySelectorAll(".section, .card").forEach(el => {
-    el.classList.add("fade-in");
-    observer.observe(el);
-});
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>

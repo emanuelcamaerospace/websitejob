@@ -1,96 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANAC UAS Simulation | Emanuel Camacho</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#04060b;color:#e5e7eb;line-height:1.7;}
-body::before{content:"";position:fixed;inset:0;
-background-image:linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:80px 80px;}
-.blueprint{position:fixed;right:-200px;top:0;width:900px;opacity:0.04;}
-nav{position:fixed;width:100%;background:rgba(4,6,11,0.95);
-padding:20px 8%;display:flex;justify-content:space-between;
-border-bottom:1px solid rgba(255,255,255,0.05);}
-nav a{color:#9ca3af;text-decoration:none;}
-nav a:hover{color:white;}
-.section{padding:140px 8% 120px 8%;}
-h1{font-size:48px;margin-bottom:40px;}
-.card{background:#0b0f17;padding:40px;border:1px solid rgba(255,255,255,0.08);margin-bottom:50px;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.gallery img{width:100%;border:1px solid rgba(255,255,255,0.1);}
-.contact-section{background:#0b0f17;padding:150px 8%;text-align:center;border-top:1px solid rgba(255,255,255,0.1);}
-.contact-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:80px;margin-top:80px;}
-.contact-item{font-size:22px;}
-.contact-item strong{display:block;font-size:26px;margin-bottom:10px;}
-.contact-item a{color:white;text-decoration:none;}
-</style>
+<title>ANAC Internship – Emanuel Camacho</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<img src="images/aircraft_blueprint.png" class="blueprint">
-
-<nav>
-<div><strong>ANAC UAS Project</strong></div>
-<div><a href="index.html">Home</a></div>
-</nav>
+<a href="index.html" class="btn" style="margin:30px;">← Back to Portfolio</a>
 
 <section class="section">
-<h1>UAS Failure Trajectory Prediction & Certification Support</h1>
-
-<div class="card">
-During my internship at the Portuguese Civil Aviation Authority,
-I conducted analysis of the European UAS market and developed
-aerodynamic models predicting UAS behaviour after critical failures.
-
-Using aerodynamic equations of motion, I simulated:
-• Engine failure descent trajectories  
-• Glide performance variations  
-• Horizontal and vertical coverage envelopes  
-
-I implemented these simulations through an HTML-based interface,
-allowing non-technical users to input UAS parameters and
-visualize predicted trajectories.
-
-These simulations supported early-stage UAS certification
-risk assessment processes.
-</div>
-
-<h2 style="margin-bottom:40px;">Simulation Interface & Results</h2>
-
-<div class="gallery">
-<img src="images/anac1.jpg">
-<img src="images/anac2.jpg">
-<img src="images/anac3.jpg">
-</div>
-
+    <h2>ANAC – UAS Certification & Simulation</h2>
+    <div class="card">
+        <p>
+            Internship focused on analyzing the European UAS market and developing simulation tools to predict UAS behavior after critical failures.
+        </p>
+        <ul>
+            <li>Trajectory prediction based on aerodynamics calculations</li>
+            <li>HTML-based simulation interface for regulatory processes</li>
+            <li>Contribution to UAS certification documentation</li>
+        </ul>
+    </div>
 </section>
-
-<section class="contact-section">
-<h2>Contact & Networks</h2>
-
-<div class="contact-grid">
-<div class="contact-item"><strong>Email</strong>emanuel1902191@gmail.com</div>
-<div class="contact-item"><strong>LinkedIn</strong>
-<a href="https://linkedin.com/in/emanuel-camacho-05ab8a245" target="_blank">linkedin.com/in/emanuel-camacho</a></div>
-<div class="contact-item"><strong>GitHub</strong>
-<a href="https://github.com/Enclavelisbased" target="_blank">github.com/Enclavelisbased</a></div>
-<div class="contact-item"><strong>Phone</strong>+351 960 366 633</div>
-</div>
-
-<p style="margin-top:80px;opacity:0.5;">© 2026 Emanuel Camacho</p>
-</section>
-
-<script>
-window.addEventListener("scroll",function(){
-document.querySelector(".blueprint").style.transform =
-"translateY("+window.scrollY*0.2+"px)";
-});
-</script>
 
 </body>
 </html>
