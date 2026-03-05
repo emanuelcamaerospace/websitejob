@@ -60,8 +60,9 @@ Or run a local development server depending on your setup.
 Example structure:
 
 ```
-/files         → PDF's and models used
 /images        → images used in the website
+/files         → other content used
+/models        → 3D CAD models used for presentation 
 style.css      → stylesheet
 /index.html    → main webpage
 ```
