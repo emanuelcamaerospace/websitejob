@@ -1,27 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLUE – Emanuel Camacho</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUE – Emanuel Camacho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+    <style>
+        /* General Gallery Styling */
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: transparent; /* Removes the heavy black box */
+            min-height: 600px;
+        }
+
+        /* Specific fix for the PDF to prevent squashing */
+        .swiper-slide iframe {
+            width: 100%;
+            height: 800px; /* Increased height for better document viewing */
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive media handling */
+        .swiper-slide img, 
+        .swiper-slide model-viewer, 
+        .swiper-slide video {
+            max-width: 100%;
+            height: auto;
+            max-height: 700px;
+            border-radius: 8px;
+        }
+
+        .caption {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .caption h3 {
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+
+        .caption p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Adjusting navigation button colors if background is dark */
+        .swiper-button-next, .swiper-button-prev {
+            color: #007bff;
+        }
+    </style>
 </head>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
 <body>
 
-<a href="index.html" class="btn" style="margin:30px;">← Back to Portfolio</a>
+<a href="index.html" class="btn" style="margin:30px; display: inline-block;">← Back to Portfolio</a>
 
-<section class="section">
+<section class="section" style="max-width: 1200px; margin: auto; padding: 20px;">
     <h2>BLUE – Micro Turbojet Project</h2>
     <div class="card">
         <p>
-            As part of <strong>Aerotéc</strong>, I am currently leading the design and optimization of radial impeller and diffuser components for a student-developed micro turbojet engine. My responsibilities include:
+            As part of <strong>Aerotéc</strong>, I am currently leading the design and optimization of radial impeller and diffuser components for a student-developed micro turbojet engine where I have:
         </p>
         <ul>
             <li>Created detailed 3D CAD models of impeller and diffuser components in SolidWorks and Siemens NX, integrating aerodynamic efficiency with manufacturing constraints and structural integrity considerations.</li>
@@ -33,16 +89,17 @@
         </ul>
     </div>
 
-    <h3>Project Gallery</h3>
+    <h3 style="margin-top: 40px;">Project Gallery</h3>
+    
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
 
             <!-- Slide 1: 3D Model -->
             <div class="swiper-slide">
-                <model-viewer src="models/impellerV4.gltf"
+                <model-viewer src="models/impellerV6.gltf"
                               alt="Impeller 3D Model"
                               camera-controls auto-rotate
-                              style="width:100%; height:800px; border-radius:8px;">
+                              style="width:100%; height:600px;">
                 </model-viewer>
                 <div class="caption">
                     <h3>Interactive 3D Impeller</h3>
@@ -50,18 +107,28 @@
                 </div>
             </div>
 
-            <!-- Slide 2: PDF -->
+            <!-- Slide 2: PDF (Fixed Width) -->
             <div class="swiper-slide">
-                <iframe src="files/BLUE_CAD.pdf" width="50%" height="200px"></iframe>
+                <!-- Added #view=FitH to help the PDF scale to the width of the frame -->
+                <iframe src="files/BLUE_CAD.pdf#view=FitH"></iframe>
                 <div class="caption">
-                    <h3>CAD automation process</h3>
+                    <h3>CAD Automation Process</h3>
                     <p>Document summarizing my own CAD automation process for new and existing team members.</p>
                 </div>
             </div>
 
-            <!-- Slide 3: Video -->
+            <!-- Slide 3: NX Revision Image (Fixed Class) -->
             <div class="swiper-slide">
-                <video controls style="width: 100%; max-height: 700px; border-radius:8px;">
+                <img src="images/sketchrevpost.JPG" alt="Impeller v6">
+                <div class="caption">
+                    <h3>Impeller Design in NX</h3>
+                    <p>6th revision of the impeller design in Siemens NX.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: Video -->
+            <div class="swiper-slide">
+                <video controls style="width: 70%; max-height: 600px;">
                     <source src="files/Video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -73,19 +140,21 @@
 
         </div>
 
-        <!-- Navigation arrows -->
+        <!-- Pagination & Navigation -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-        <!-- Pagination -->
         <div class="swiper-pagination"></div>
     </div>
 </section>
 
+<!-- Scripts -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
 <script>
   const swiper = new Swiper(".mySwiper", {
     loop: true,
+    autoHeight: false, // Keeps the container height stable
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -99,5 +168,3 @@
 
 </body>
 </html>
-
-

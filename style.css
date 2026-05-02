@@ -112,7 +112,14 @@ nav a.btn { text-align: center; }
   letter-spacing: 1px;
   transition: 0.3s;
 }
+.impeller-slide {
+  min-height: 400px; /* force space */
+}
 
+.impeller-slide img {
+  max-height: 500px;
+  width: auto;
+}
 .btn:hover { background: #ffffff; color: #05070d; }
 
 /* ================= SECTIONS ================= */
